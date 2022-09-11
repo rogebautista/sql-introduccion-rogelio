@@ -1,4 +1,4 @@
-select car_km.model_name as "Modelo", car_km.brand_name as "Marca", car_km.group_name as "Grupo empresarial", car_km.adquisition_date as "Fecha de compra",
+select car_km.model_name as "Modelo", car_km.brand_name as "Marca", car_km.group_name as "Grupo empresarial", car_km.adquisition_date::date as "Fecha de compra",
        car_km.vehicle_registration as "Matricula", car_km.color_name as "Color", car_km.kilometers as "Total de Kilometros", insurance_car.insurance_carrier_name as "Aseguradora", insurance_car.policy_number as "Número de póliza" from
 (select car_details.model_name, car_details.brand_name, car_details.group_name, car_details.id_vehicle, car_details.adquisition_date, car_details.vehicle_registration, car_details.color_name, car_details.vehicle_policy_id, kilometers.kilometers from
 (select veh.model_name, veh.brand_name, veh.group_name, veh.id_vehicle, veh.adquisition_date, veh.vehicle_registration, veh.color_name, veh.vehicle_policy_id
